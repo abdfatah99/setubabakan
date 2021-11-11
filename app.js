@@ -12,7 +12,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "kpbsn"
+    database: "museum_setu_babakan"
     //semua variabel didapat dari file '.env'
 });
 
@@ -46,12 +46,12 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1 * 60 * 60 * 1000 // Days * Hours * Minutes * Seconds * 1000
+        maxAge: 3 * 60 * 60 * 1000 // Days * Hours * Minutes * Seconds * 1000
     }
 }));
 
 // Routers
-app.use('/', require('./routes/pages')); //menampilkan website
+app.use('/', require('./router/pages')); //menampilkan website
 
 app.listen(5001, () => {
     console.log('Server started on Port 5001'); // menjalankan server di port 5001
